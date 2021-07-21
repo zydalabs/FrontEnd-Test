@@ -29,13 +29,14 @@ const GlobalAppWrapper = styled.div`
     justify-content: center;
     align-items: center;
     font-size: 24px;
+    font-weight: 800;
     padding: 20px;
     box-shadow: 0 -6px 10px #171918;
     background-color: ${props => props.theme.elements};
     color: ${props => props.theme.fontColor};
   }
 
-  .div {
+  .element {
     background-color: ${props => props.theme.elements};
     color: ${props => props.theme.fontColor};
   }
