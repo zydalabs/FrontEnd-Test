@@ -7,18 +7,20 @@ import {
   GlobalStyles,
   GlobalAppWrapper
 } from './themes';
+import Header from './components/header/Header';
+
+const THEMES = {
+  light: lightTheme,
+  dark: darkTheme
+};
 
 function App() {
-  const [theme, updateTheme] = useState(darkTheme);
-  const themeToggle = () => {
-    theme === lightTheme && updateTheme(darkTheme);
-    theme === darkTheme && updateTheme(lightTheme);
-  };
+  const [theme, updateTheme] = useState('light');
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={THEMES[theme]}>
       <GlobalStyles />
       <GlobalAppWrapper>
-        <div className='div'>Hi</div>
+        <Header theme={theme} updateTheme={updateTheme} />
       </GlobalAppWrapper>
     </ThemeProvider>
   );
