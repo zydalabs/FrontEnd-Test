@@ -17,8 +17,9 @@ const darkTheme = {
 
 const GlobalStyles = createGlobalStyle`
 body {
-    background-color:${props => props.theme.background};
+    background-color: ${props => props.theme.background};
     transition: background-color ${transitionDelay};
+    margin: 0;
 }`;
 
 export { lightTheme, darkTheme, GlobalStyles };

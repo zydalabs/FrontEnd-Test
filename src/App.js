@@ -4,6 +4,8 @@ import { lightTheme, darkTheme, GlobalStyles } from './styles/themes';
 import Layout from './components/Layout';
 import { currentTheme } from './constants/localStorage';
 import MainContentContainer from './components/MainContentContainer';
+import { Router } from 'react-router-dom';
+import history from './history';
 
 const THEMES = {
   light: lightTheme,
@@ -16,7 +18,9 @@ function App() {
     <ThemeProvider theme={THEMES[theme]}>
       <GlobalStyles />
       <Layout theme={theme} updateTheme={updateTheme}>
-        <MainContentContainer />
+        <Router history={history}>
+          <MainContentContainer />
+        </Router>
       </Layout>
     </ThemeProvider>
   );
