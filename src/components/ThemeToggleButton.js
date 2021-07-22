@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { setThemeInLocalStorage } from '../constants/localStorage';
 import { sun, moon } from '../svgs';
 
 const Button = styled.button`
@@ -20,7 +21,13 @@ const ThemeToggleButton = ({ theme, updateTheme }) => {
   const isLightTheme = theme === 'light';
 
   const themeToggle = () => {
-    isLightTheme ? updateTheme('dark') : updateTheme('light');
+    if (isLightTheme) {
+      updateTheme('dark');
+      setThemeInLocalStorage('dark');
+    } else {
+      updateTheme('light');
+      setThemeInLocalStorage('light');
+    }
   };
 
   const themeIcon = (
@@ -28,6 +35,7 @@ const ThemeToggleButton = ({ theme, updateTheme }) => {
   );
 
   const themeName = isLightTheme ? 'Dark Mode' : 'Light Mode';
+
   return (
     <Button className='element' onClick={themeToggle}>
       {themeIcon}

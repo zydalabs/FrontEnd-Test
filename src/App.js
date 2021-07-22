@@ -3,6 +3,7 @@ import './App.css';
 import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme, GlobalStyles } from './styles/themes';
 import Layout from './components/Layout';
+import { currentTheme } from './constants/localStorage';
 
 const THEMES = {
   light: lightTheme,
@@ -10,7 +11,7 @@ const THEMES = {
 };
 
 function App() {
-  const [theme, updateTheme] = useState('light');
+  const [theme, updateTheme] = useState(currentTheme);
   return (
     <ThemeProvider theme={THEMES[theme]}>
       <GlobalStyles />
