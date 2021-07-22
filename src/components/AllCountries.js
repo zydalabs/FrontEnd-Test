@@ -8,6 +8,7 @@ const MainContainer = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-gap: 80px;
 `;
+
 const AllCountries = ({ countries }) => {
   return (
     <MainContainer id='mcc'>

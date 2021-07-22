@@ -2,6 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import { getValuesByFields } from '../utilities/getValuesByField';
 import { useHistory } from 'react-router-dom';
+import {
+  desktopView,
+  mobileView,
+  tabletView
+} from '../constants/stylingVariables';
 import { darkThemeArrow, lightThemeArrow } from '../svgs';
 import useTheme from '../hooks/themeContext';
 
@@ -10,6 +15,16 @@ const Container = styled.div`
   flex-direction: column;
   margin: 60px;
   width: 80%;
+
+  @media (max-width: ${tabletView}) {
+    margin: 20px;
+    width: 90%;
+  }
+
+  @media (max-width: ${mobileView}) {
+    margin: 20px 0px;
+    width: 100%;
+  }
 `;
 
 const BackButton = styled.button`
@@ -21,11 +36,17 @@ const BackButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 5px;
 
   #back-arrow {
     margin-right: 15px;
     margin-left: -20px;
     width: 20px;
+  }
+
+  @media (max-width: ${mobileView}) {
+    width: 120px;
+    padding: 8px;
   }
 `;
 
@@ -37,7 +58,7 @@ const CountryContentContainer = styled.div`
   .flag {
     flex: 1;
     img {
-      width: 600px;
+      width: 550px;
       object-fit: cover;
     }
   }
@@ -65,10 +86,59 @@ const CountryContentContainer = styled.div`
       font-weight: 800;
     }
   }
+
+  @media (max-width: ${desktopView}) {
+    .flag > img {
+      width: 450px;
+    }
+  }
+
+  @media (max-width: ${tabletView}) {
+    .flag > img {
+      width: 100%;
+    }
+
+    .details {
+      padding: 0;
+
+      #name {
+        font-size: 22px;
+        font-weight: 600;
+      }
+
+      .details-field {
+        font-size: 12px;
+      }
+    }
+  }
+
+  @media (max-width: ${mobileView}) {
+    margin-top: 40px;
+    flex-direction: column;
+
+    .flag {
+      margin-bottom: 30px;
+    }
+    .details {
+      #columns-container {
+        flex-direction: column;
+      }
+
+      .details-field {
+        font-size: 14px;
+      }
+    }
+  }
 `;
 
 const DetailsColumns = styled.div`
   flex: 1;
+
+  @media (max-width: ${tabletView}) {
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
 `;
 
 const LeftColumn = ({ nativeName, population, region, subregion, capital }) => {

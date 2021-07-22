@@ -1,6 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
+import { transitionDelay } from '../constants/stylingVariables';
 
 const Card = styled.div`
   height: 400px;
@@ -10,12 +11,15 @@ const Card = styled.div`
   justify-self: stretch;
   border-radius: 5px;
   overflow: hidden;
+  box-shadow: 0 0 19px -15px ${props => props.theme.shadow};
 
   &:hover {
     margin-top: -5px;
     margin-left: -5px;
     width: calc(100% + 10px);
     height: calc(100% + 10px);
+    box-shadow: 0 0 19px -8px ${props => props.theme.shadow};
+    transition: width ${transitionDelay}, height ${transitionDelay};
   }
 `;
 
@@ -39,7 +43,7 @@ const CountryDetails = styled.div`
   .capital {
     margin: 0;
     line-height: 2;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
   }
 
