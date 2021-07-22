@@ -31,13 +31,17 @@ const ThemeToggleButton = ({ theme, updateTheme }) => {
   };
 
   const themeIcon = (
-    <img alt='light-dark-mode-icon' src={isLightTheme ? moon : sun} />
+    <img
+      id='theme-icon'
+      alt='light-dark-mode-icon'
+      src={isLightTheme ? moon : sun}
+    />
   );
 
   const themeName = isLightTheme ? 'Dark Mode' : 'Light Mode';
 
   return (
-    <Button className='element' onClick={themeToggle}>
+    <Button className='element' onClick={themeToggle} id='theme-toggle-button'>
       {themeIcon}
       {themeName}
     </Button>

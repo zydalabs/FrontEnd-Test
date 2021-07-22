@@ -5,7 +5,7 @@ import { GlobalAppWrapper } from '../styles/globalStyles';
 const Layout = ({ theme, updateTheme, children }) => {
   return (
     <>
-      <GlobalAppWrapper>
+      <GlobalAppWrapper id='layout'>
         <Header theme={theme} updateTheme={updateTheme} />
         {children}
       </GlobalAppWrapper>

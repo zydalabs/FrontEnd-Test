@@ -24,6 +24,7 @@ const HeaderWrapper = styled.header`
   font-weight: 800;
   padding: 20px;
   box-shadow: 0 -6px 10px #171918;
+  background-color: ${props => props.theme.elements};
 
   @media (max-width: ${tabletView}) {
     font-size: 18px;
@@ -36,8 +37,8 @@ const HeaderWrapper = styled.header`
 
 const Header = ({ theme, updateTheme }) => {
   return (
-    <HeaderWrapper>
-      <Container>
+    <HeaderWrapper id='header'>
+      <Container id='header-content-container'>
         Where in the World?
         <ThemeToggleButton theme={theme} updateTheme={updateTheme} />
       </Container>
