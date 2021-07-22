@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { getValuesByFields } from '../utilities/getValuesByField';
 import { useHistory } from 'react-router-dom';
 import { darkThemeArrow, lightThemeArrow } from '../svgs';
+import useTheme from '../hooks/themeContext';
 
 const Container = styled.div`
   display: flex;
@@ -129,12 +130,18 @@ const SingleCountry = ({ country }) => {
     currencies,
     languages
   } = country;
+
   const history = useHistory();
+  const isLightTheme = useTheme();
 
   return (
     <Container>
       <BackButton id='back-button' onClick={() => history.goBack()}>
-        {/* <img id='back-arrow' alt='back-arrow' src={darkThemeArrow} /> */}
+        <img
+          id='back-arrow'
+          alt='back-arrow'
+          src={isLightTheme ? lightThemeArrow : darkThemeArrow}
+        />
         Back
       </BackButton>
       <CountryContentContainer id='country-content-container'>

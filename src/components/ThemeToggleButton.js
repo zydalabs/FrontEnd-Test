@@ -1,6 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { ThemeContext } from 'styled-components';
 import { setThemeInLocalStorage } from '../constants/localStorage';
+import useTheme from '../hooks/themeContext';
 import { sun, moon } from '../svgs';
 
 const Button = styled.button`
@@ -17,8 +18,8 @@ const Button = styled.button`
   }
 `;
 
-const ThemeToggleButton = ({ theme, updateTheme }) => {
-  const isLightTheme = theme === 'light';
+const ThemeToggleButton = ({ updateTheme }) => {
+  const isLightTheme = useTheme();
 
   const themeToggle = () => {
     if (isLightTheme) {

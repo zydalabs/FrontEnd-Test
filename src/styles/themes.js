@@ -2,6 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 import { transitionDelay } from '../constants/stylingVariables';
 
 const lightTheme = {
+  name: 'light',
   bodyBackground: '#fafafa',
   elementsBG: '#ffffff',
   input: '#858585',
@@ -10,6 +11,7 @@ const lightTheme = {
 };
 
 const darkTheme = {
+  name: 'dark',
   bodyBackground: '#202c37',
   elementsBG: '#2b3945',
   input: '##fafafa',

@@ -2,11 +2,11 @@ import React from 'react';
 import Header from './Header';
 import { GlobalAppWrapper } from '../styles/globalStyles';
 
-const Layout = ({ theme, updateTheme, children }) => {
+const Layout = ({ updateTheme, children }) => {
   return (
     <>
       <GlobalAppWrapper id='layout'>
-        <Header theme={theme} updateTheme={updateTheme} />
+        <Header updateTheme={updateTheme} />
         {children}
       </GlobalAppWrapper>
     </>

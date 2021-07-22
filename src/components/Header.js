@@ -35,12 +35,12 @@ const HeaderWrapper = styled.header`
   }
 `;
 
-const Header = ({ theme, updateTheme }) => {
+const Header = ({ updateTheme }) => {
   return (
     <HeaderWrapper id='header'>
       <Container id='header-content-container'>
         Where in the World?
-        <ThemeToggleButton theme={theme} updateTheme={updateTheme} />
+        <ThemeToggleButton updateTheme={updateTheme} />
       </Container>
     </HeaderWrapper>
   );

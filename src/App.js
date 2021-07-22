@@ -17,7 +17,7 @@ function App() {
   return (
     <ThemeProvider theme={THEMES[theme]}>
       <GlobalStyles />
-      <Layout theme={theme} updateTheme={updateTheme}>
+      <Layout updateTheme={updateTheme}>
         <Router history={history}>
           <MainContentContainer />
         </Router>
