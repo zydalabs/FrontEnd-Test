@@ -1,4 +1,3 @@
-import * as history from 'history';
-const historyObj =
-  history && history.createBrowserHistory && history.createBrowserHistory();
-export default historyObj;
+import { createBrowserHistory } from 'history';
+const history = createBrowserHistory();
+export default history;

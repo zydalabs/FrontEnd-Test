@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Card = styled.div`
@@ -42,8 +43,13 @@ const CountryDetails = styled.div`
   }
 `;
 const CountryCard = ({ country }) => {
+  const history = useHistory();
   return (
-    <Card onClick={() => console.log('clicked')}>
+    <Card
+      onClick={() => {
+        history.push(`/${country?.name}`);
+      }}
+    >
       <CountryFlag src={country?.flag} />
       <CountryDetails>
         <p className='country-name'>{country?.name}</p>

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { getValuesByFields } from '../utilities/getValuesByField';
+import { useHistory } from 'react-router-dom';
 
 const Container = styled.div`
   display: flex;
@@ -41,11 +42,6 @@ const CountryContentContainer = styled.div`
       flex-direction: row;
     }
 
-    #left-column,
-    #right-column {
-      flex: 1;
-    }
-
     .details-field {
       font-size: 16px;
     }
@@ -56,9 +52,13 @@ const CountryContentContainer = styled.div`
   }
 `;
 
+const DetailsColumns = styled.div`
+  flex: 1;
+`;
+
 const LeftColumn = ({ nativeName, population, region, subregion, capital }) => {
   return (
-    <>
+    <DetailsColumns>
       <p id='nativeName' className='details-field'>
         <span className='title'>Native Name: </span>
         {nativeName}
@@ -79,13 +79,13 @@ const LeftColumn = ({ nativeName, population, region, subregion, capital }) => {
         <span className='title'>Capital: </span>
         {capital}
       </p>
-    </>
+    </DetailsColumns>
   );
 };
 
 const RightColumn = ({ topLevelDomain, currencies, languages }) => {
   return (
-    <>
+    <DetailsColumns>
       <p id='top-level-domain' className='details-field'>
         <span className='title'>Top Level Domain: </span>
         {topLevelDomain}
@@ -98,37 +98,51 @@ const RightColumn = ({ topLevelDomain, currencies, languages }) => {
         <span className='title'>Languages: </span>
         {getValuesByFields(languages, 'name')}
       </p>
-    </>
+    </DetailsColumns>
   );
 };
 
 const SingleCountry = ({ country }) => {
+  const {
+    flag,
+    name,
+    nativeName,
+    population,
+    region,
+    subregion,
+    capital,
+    topLevelDomain,
+    currencies,
+    languages
+  } = country;
+  const history = useHistory();
+
   return (
     <Container>
-      <BackButton id='back-button'>Back</BackButton>
+      <BackButton id='back-button' onClick={() => history.goBack()}>
+        Back
+      </BackButton>
       <CountryContentContainer id='country-content-container'>
         <div id='flag' className='flag'>
-          <img src={country?.flag} alt='country-flag' />
+          <img id='flag-img' src={flag} alt='country-flag' />
         </div>
         <div id='details' className='details'>
-          <h1 id='name'>{country?.name}</h1>
+          <h1 id='name'>{name}</h1>
+
           <div id='columns-container'>
-            <div id='left-column'>
-              <LeftColumn
-                nativeName={country?.nativeName}
-                population={country?.population}
-                region={country?.region}
-                subregion={country?.subregion}
-                capital={country?.capital}
-              />
-            </div>
-            <div id='right-column'>
-              <RightColumn
-                topLevelDomain={country?.topLevelDomain}
-                currencies={country?.currencies}
-                languages={country?.languages}
-              />
-            </div>
+            <LeftColumn
+              nativeName={nativeName}
+              population={population}
+              region={region}
+              subregion={subregion}
+              capital={capital}
+            />
+
+            <RightColumn
+              topLevelDomain={topLevelDomain}
+              currencies={currencies}
+              languages={languages}
+            />
           </div>
         </div>
       </CountryContentContainer>
