@@ -1,12 +1,8 @@
 import { useState } from 'react';
 import './App.css';
 import { ThemeProvider } from 'styled-components';
-import {
-  lightTheme,
-  darkTheme,
-  GlobalStyles,
-  GlobalAppWrapper
-} from './themes';
+import { lightTheme, darkTheme, GlobalStyles } from './styles/themes';
+import { GlobalAppWrapper } from './styles/globalStyles';
 import Header from './components/header/Header';
 
 const THEMES = {

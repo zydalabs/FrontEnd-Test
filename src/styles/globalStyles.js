@@ -1,23 +1,5 @@
-import styled, { createGlobalStyle } from 'styled-components';
-
-const lightTheme = {
-  background: '#fafafa',
-  elements: '#ffffff',
-  input: '#858585',
-  fontColor: '#000'
-};
-
-const darkTheme = {
-  background: '#202c37',
-  elements: '#2b3945',
-  input: '##fafafa',
-  fontColor: '#ffffff'
-};
-
-const GlobalStyles = createGlobalStyle`
-body {
-    background-color:${props => props.theme.background}
-}`;
+import styled from 'styled-components';
+import { transitionDelay } from '../constants/stylingVariables';
 
 const GlobalAppWrapper = styled.div`
   * {
@@ -32,18 +14,22 @@ const GlobalAppWrapper = styled.div`
     font-weight: 800;
     padding: 20px;
     box-shadow: 0 -6px 10px #171918;
+
     background-color: ${props => props.theme.elements};
     color: ${props => props.theme.fontColor};
+    transition: background-color ${transitionDelay}, color ${transitionDelay};
   }
 
   .element {
     background-color: ${props => props.theme.elements};
     color: ${props => props.theme.fontColor};
+    transition: background-color ${transitionDelay}, color ${transitionDelay};
   }
 
   .input {
     color: ${props => props.theme.input};
+    transition: color ${transitionDelay};
   }
 `;
 
-export { lightTheme, darkTheme, GlobalStyles, GlobalAppWrapper };
+export { GlobalAppWrapper };
