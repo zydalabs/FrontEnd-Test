@@ -1,1 +1,4 @@
 export const transitionDelay = '500ms';
+export const mobileView = '375px';
+export const tabletView = '768px';
+export const desktopView = '1440px';

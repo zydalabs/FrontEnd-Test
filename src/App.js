@@ -3,7 +3,7 @@ import './App.css';
 import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme, GlobalStyles } from './styles/themes';
 import { GlobalAppWrapper } from './styles/globalStyles';
-import Header from './components/header/Header';
+import Header from './components/Header';
 
 const THEMES = {
   light: lightTheme,

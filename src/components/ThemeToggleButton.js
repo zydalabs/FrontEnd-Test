@@ -1,13 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { sun, moon } from '../../svgs';
+import { sun, moon } from '../svgs';
 
-const Container = styled.div`
-  display: flex;
-  justify-content: space-between;
-  width: 80%;
-`;
-const ThemeToggleButton = styled.button`
+const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,7 +16,7 @@ const ThemeToggleButton = styled.button`
   }
 `;
 
-const Header = ({ theme, updateTheme }) => {
+const ThemeToggleButton = ({ theme, updateTheme }) => {
   const isLightTheme = theme === 'light';
 
   const themeToggle = () => {
@@ -33,18 +28,12 @@ const Header = ({ theme, updateTheme }) => {
   );
 
   const themeName = isLightTheme ? 'Dark Mode' : 'Light Mode';
-
   return (
-    <header>
-      <Container>
-        Where in the World?
-        <ThemeToggleButton className='element' onClick={themeToggle}>
-          {themeIcon}
-          {themeName}
-        </ThemeToggleButton>
-      </Container>
-    </header>
+    <Button className='element' onClick={themeToggle}>
+      {themeIcon}
+      {themeName}
+    </Button>
   );
 };
 
-export default Header;
+export default ThemeToggleButton;
