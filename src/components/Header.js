@@ -23,8 +23,8 @@ const HeaderWrapper = styled.header`
   font-size: 24px;
   font-weight: 800;
   padding: 20px;
-  box-shadow: 0 -6px 10px #171918;
-  background-color: ${props => props.theme.elements};
+  box-shadow: 0 0px 18px -3px ${props => props.theme.shadow};
+  background-color: ${props => props.theme.elementsBG};
 
   @media (max-width: ${tabletView}) {
     font-size: 18px;

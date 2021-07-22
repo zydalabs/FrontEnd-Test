@@ -3,27 +3,31 @@ import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Card = styled.div`
+  height: 400px;
   display: flex;
   flex-direction: column;
-  background-color: ${props => props.theme.elements};
+  background-color: ${props => props.theme.elementsBG};
   justify-self: stretch;
   border-radius: 5px;
   overflow: hidden;
 
   &:hover {
-    background-color: red;
-    width: 105%;
+    margin-top: -5px;
+    margin-left: -5px;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
   }
 `;
 
 const CountryFlag = styled.img`
-  max-height: 190px;
+  max-height: 180px;
   object-fit: cover;
 `;
 
 const CountryDetails = styled.div`
-  padding: 20px;
-  margin: 0;
+  width: 220px;
+  padding 20px;
+  margin: auto auto;
 
   .country-name {
     font-size: 20px;
@@ -38,6 +42,7 @@ const CountryDetails = styled.div`
     font-size: 16px;
     font-weight: 500;
   }
+
   .title {
     font-weight: 800;
   }
@@ -51,7 +56,7 @@ const CountryCard = ({ country }) => {
       }}
     >
       <CountryFlag src={country?.flag} />
-      <CountryDetails>
+      <CountryDetails id='country-details'>
         <p className='country-name'>{country?.name}</p>
 
         <p className='population'>
