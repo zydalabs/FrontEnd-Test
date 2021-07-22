@@ -1,47 +1,36 @@
 import React from 'react';
 import styled from 'styled-components';
+import CountryCard from './CountryCard';
 
 const MainContainerWrapper = styled.div`
   display: flex;
   justify-content: center;
   padding: 20px;
 `;
+
 const MainContainer = styled.div`
   width: 80%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: 40px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 80px;
 `;
 
-const TestComp = () => (
-  <div
-    style={{
-      margin: '10px',
-      //   width: '300px',
-      //   height: '200px',
-      backgroundColor: 'red',
-      justifySelf: 'stretch'
-    }}
-  >
-    h
-  </div>
-);
-
 const MainContentContainer = () => {
+  const [countries, setCountries] = React.useState([]);
+  React.useEffect(() => {
+    fetch('https://restcountries.eu/rest/v2/all')
+      .then(res => res.json())
+      .then(data => {
+        setCountries(data);
+        console.log(data[0]);
+      });
+  }, []);
   return (
     <MainContainerWrapper id='mcc-wrapper'>
       <MainContainer id='mcc'>
-        <TestComp />
-        <TestComp />
-        <TestComp />
-        <TestComp />
-        <TestComp />
-        <TestComp />
-        <TestComp />
-        <TestComp />
-        <TestComp />
-        <TestComp />
-        <TestComp />
+        {countries?.map(country => (
+          <CountryCard key={country?.numericCode} country={country} />
+        ))}
       </MainContainer>
     </MainContainerWrapper>
   );
