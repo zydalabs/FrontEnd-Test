@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { getAllCountries } from '../services/getAllCountries';
 import CountryCard from './CountryCard';
 
 const MainContainerWrapper = styled.div`
@@ -18,13 +19,13 @@ const MainContainer = styled.div`
 const MainContentContainer = () => {
   const [countries, setCountries] = React.useState([]);
   React.useEffect(() => {
-    fetch('https://restcountries.eu/rest/v2/all')
-      .then(res => res.json())
-      .then(data => {
-        setCountries(data);
-        console.log(data[0]);
-      });
+    const fetchCountries = async () => {
+      const data = await getAllCountries();
+      setCountries(data);
+    };
+    fetchCountries();
   }, []);
+
   return (
     <MainContainerWrapper id='mcc-wrapper'>
       <MainContainer id='mcc'>
