@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { getValuesByFields } from '../utilities/getValuesByField';
 import { useHistory } from 'react-router-dom';
-import { backArrow } from '../svgs';
+import { darkThemeArrow, lightThemeArrow } from '../svgs';
 
 const Container = styled.div`
   display: flex;
@@ -27,6 +27,7 @@ const BackButton = styled.button`
     width: 20px;
   }
 `;
+
 const CountryContentContainer = styled.div`
   display: flex;
   flex-direction: row;
@@ -133,7 +134,7 @@ const SingleCountry = ({ country }) => {
   return (
     <Container>
       <BackButton id='back-button' onClick={() => history.goBack()}>
-        <img id='back-arrow' alt='back-arrow' src={backArrow} />
+        {/* <img id='back-arrow' alt='back-arrow' src={darkThemeArrow} /> */}
         Back
       </BackButton>
       <CountryContentContainer id='country-content-container'>
