@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import CountryCard from './CountryCard';
 
 const MainContainer = styled.div`
-  width: 80%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-gap: 80px;

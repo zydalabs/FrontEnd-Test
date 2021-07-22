@@ -6,7 +6,7 @@ const GlobalAppWrapper = styled.div`
     font-family: 'Nunito Sans', sans-serif;
     color: ${props => props.theme.fontColor};
     transition: background-color ${transitionDelay}, color ${transitionDelay},
-      shadow ${transitionDelay};
+      box-shadow ${transitionDelay};
   }
 `;
 

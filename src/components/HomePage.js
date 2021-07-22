@@ -1,6 +1,15 @@
 import React from 'react';
+import styled from 'styled-components';
 import { getAllCountries } from '../services/getAllCountries';
 import AllCountries from './AllCountries';
+import SearchAndFilter from './SearchAndFilter';
+
+const Container = styled.div`
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+  justify-content: center;
+`;
 
 const HomePage = () => {
   const [countries, setCountries] = React.useState([]);
@@ -13,7 +22,12 @@ const HomePage = () => {
     fetchCountries();
   }, []);
 
-  return <AllCountries countries={countries} />;
+  return (
+    <Container id='homepage-container'>
+      <SearchAndFilter />
+      <AllCountries countries={countries} />
+    </Container>
+  );
 };
 
 export default HomePage;
