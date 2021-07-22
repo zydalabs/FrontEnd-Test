@@ -2,8 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme, GlobalStyles } from './styles/themes';
-import { GlobalAppWrapper } from './styles/globalStyles';
-import Header from './components/Header';
+import Layout from './components/Layout';
 
 const THEMES = {
   light: lightTheme,
@@ -15,9 +14,9 @@ function App() {
   return (
     <ThemeProvider theme={THEMES[theme]}>
       <GlobalStyles />
-      <GlobalAppWrapper>
-        <Header theme={theme} updateTheme={updateTheme} />
-      </GlobalAppWrapper>
+      <Layout theme={theme} updateTheme={updateTheme}>
+        {/* <MainContentContainer /> */}
+      </Layout>
     </ThemeProvider>
   );
 }
