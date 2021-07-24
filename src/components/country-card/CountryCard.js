@@ -52,7 +52,7 @@ const CountryCard = ({ country }) => {
   return (
     <Card
       onClick={() => {
-        history.push(`/${country?.name}`);
+        history.push(`/${country?.alpha3Code}`);
       }}
     >
       <CountryFlag src={country?.flag} />

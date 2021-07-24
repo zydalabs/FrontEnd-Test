@@ -1,19 +1,20 @@
 import React from 'react';
-import { getCountryDetails } from '../services/getCountryDetails';
+import { getCountryByCode } from '../services';
 import { SingleCountry } from '../components/single-country';
 import { useParams } from 'react-router-dom';
 
 const CountryDetailsPage = () => {
-  const { name } = useParams();
+  const { code } = useParams();
 
   const [country, setCountry] = React.useState({});
+
   React.useEffect(() => {
-    const countryDetails = async countryName => {
-      const data = await getCountryDetails(countryName);
-      setCountry(data[0]);
+    const countryDetails = async countryCode => {
+      const data = await getCountryByCode(countryCode);
+      setCountry(data);
     };
-    countryDetails(name);
-  }, [name]);
+    countryDetails(code);
+  }, [code]);
 
   return <SingleCountry country={country} />;
 };

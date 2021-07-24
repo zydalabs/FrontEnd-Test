@@ -15,7 +15,7 @@ const MainContentContainer = () => {
     <MainContainerWrapper id='mcc-wrapper'>
       <Switch>
         <Route exact path='/' component={HomePage} />
-        <Route path='/:name' component={CountryDetailsPage} />
+        <Route path='/:code' component={CountryDetailsPage} />
       </Switch>
     </MainContainerWrapper>
   );
