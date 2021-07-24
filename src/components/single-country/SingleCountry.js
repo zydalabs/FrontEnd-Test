@@ -9,6 +9,7 @@ import {
   CountryContentContainer,
   DetailsColumns
 } from './StyledComponents';
+import { getCountryByCode } from '../../services';
 
 const LeftColumn = ({ nativeName, population, region, subregion, capital }) => {
   return (
@@ -56,6 +57,11 @@ const RightColumn = ({ topLevelDomain, currencies, languages }) => {
   );
 };
 
+const BorderCountries = ({ borderCountriesArray }) => {
+  console.log({ borderCountriesArray });
+  return 'hi';
+};
+
 const SingleCountry = ({ country }) => {
   const {
     flag,
@@ -67,8 +73,26 @@ const SingleCountry = ({ country }) => {
     capital,
     topLevelDomain,
     currencies,
-    languages
+    languages,
+    borders
   } = country;
+
+  const [borderCountries, updateBorderCountries] = React.useState([]);
+
+  React.useEffect(() => {
+    const getCountriesNamesByCodes = async countriesCodes => {
+      return Promise.all(
+        countriesCodes.map(countryCode =>
+          getCountryByCode(countryCode).then(country => country.name)
+        )
+      );
+    };
+
+    borders &&
+      getCountriesNamesByCodes(borders).then(countriesNamesArr =>
+        updateBorderCountries(countriesNamesArr)
+      );
+  }, [borders]);
 
   const history = useHistory();
   const isLightTheme = useTheme();
@@ -105,6 +129,9 @@ const SingleCountry = ({ country }) => {
               languages={languages}
             />
           </div>
+        </div>
+        <div id='border-countries' className='border-countries'>
+          <BorderCountries borderCountriesArray={borderCountries} />
         </div>
       </CountryContentContainer>
     </Container>
