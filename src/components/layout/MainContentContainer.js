@@ -1,14 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
 import HomePage from '../../pages/HomePage';
 import CountryDetailsPage from '../../pages/CountryDetailsPage';
 import { Switch, Route } from 'react-router-dom';
-
-const MainContainerWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-`;
+import { MainContainerWrapper } from './StyledComponents';
 
 const MainContentContainer = () => {
   return (
