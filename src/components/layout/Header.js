@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { mobileView, tabletView } from '../constants/stylingVariables';
-import ThemeToggleButton from './ThemeToggleButton';
+import { mobileView, tabletView } from '../../constants/stylingVariables';
+import { ThemeToggleButton } from '../buttons';
 
 const Container = styled.div`
   display: flex;

@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from './Header';
-import { GlobalAppWrapper } from '../styles/globalStyles';
+import { Header } from './';
+import { GlobalAppWrapper } from '../../styles/globalStyles';
 
 const Layout = ({ updateTheme, children }) => {
   return (

@@ -1,14 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
+import { mobileView } from '../constants/stylingVariables';
 import { getAllCountries } from '../services/getAllCountries';
-import AllCountries from './AllCountries';
-import SearchAndFilter from './SearchAndFilter';
+import { AllCountries } from '../components/all-countries';
+import { SearchAndFilter } from '../components/search-and-filter';
 
 const Container = styled.div`
   display: flex;
   width: 80%;
   flex-direction: column;
   justify-content: center;
+
+  @media (max-width: ${mobileView}) {
+    width: 100%;
+  }
 `;
 
 const HomePage = () => {

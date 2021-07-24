@@ -1,6 +1,6 @@
 import React from 'react';
 import { getCountryDetails } from '../services/getCountryDetails';
-import SingleCountry from './SingleCountry';
+import { SingleCountry } from '../components/single-country';
 import { useParams } from 'react-router-dom';
 
 const CountryDetailsPage = () => {
@@ -18,4 +18,4 @@ const CountryDetailsPage = () => {
   return <SingleCountry country={country} />;
 };
 
-export default React.memo(CountryDetailsPage);
+export default CountryDetailsPage;

@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme, GlobalStyles } from './styles/themes';
-import Layout from './components/Layout';
+import { Layout, MainContentContainer } from './components/layout';
 import { currentTheme } from './constants/localStorage';
-import MainContentContainer from './components/MainContentContainer';
 import { BrowserRouter as Router } from 'react-router-dom';
 import history from './history';
 

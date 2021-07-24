@@ -1,9 +1,9 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
-import { transitionDelay } from '../constants/stylingVariables';
 
 const Card = styled.div`
+  max-width: 300px;
   height: 400px;
   display: flex;
   flex-direction: column;
@@ -14,12 +14,8 @@ const Card = styled.div`
   box-shadow: 0 0 19px -15px ${props => props.theme.shadow};
 
   &:hover {
-    margin-top: -5px;
-    margin-left: -5px;
-    width: calc(100% + 10px);
-    height: calc(100% + 10px);
+    transform: scale(1.02);
     box-shadow: 0 0 19px -8px ${props => props.theme.shadow};
-    transition: width ${transitionDelay}, height ${transitionDelay};
   }
 `;
 

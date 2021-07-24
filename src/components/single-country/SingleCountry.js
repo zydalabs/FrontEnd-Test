@@ -1,14 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import { getValuesByFields } from '../utilities/getValuesByField';
+import { getValuesByFields } from '../../utilities/getValuesByField';
 import { useHistory } from 'react-router-dom';
 import {
   desktopView,
   mobileView,
   tabletView
-} from '../constants/stylingVariables';
-import { darkThemeArrow, lightThemeArrow } from '../svgs';
-import useTheme from '../hooks/themeContext';
+} from '../../constants/stylingVariables';
+import { darkThemeArrow, lightThemeArrow } from '../../svgs';
+import useTheme from '../../hooks/themeContext';
 
 const Container = styled.div`
   display: flex;
