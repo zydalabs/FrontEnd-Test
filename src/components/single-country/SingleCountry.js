@@ -4,9 +4,10 @@ import { useHistory } from 'react-router-dom';
 import { darkThemeArrow, lightThemeArrow } from '../../svgs';
 import useTheme from '../../hooks/themeContext';
 import {
-  Container,
+  SingleCountryContainer,
   BackButton,
   CountryContentContainer,
+  BorderCountriesContainer,
   DetailsColumns
 } from './StyledComponents';
 import { getCountryByCode } from '../../services';
@@ -58,8 +59,18 @@ const RightColumn = ({ topLevelDomain, currencies, languages }) => {
 };
 
 const BorderCountries = ({ borderCountriesArray }) => {
-  console.log({ borderCountriesArray });
-  return 'hi';
+  return (
+    <BorderCountriesContainer id='border-countries-container'>
+      <span id='border-countries-title' className='title'>
+        Border Countries:
+      </span>
+      <div id='countries-cards'>
+        {borderCountriesArray.map(countryName => (
+          <div id='country-card'>{countryName}</div>
+        ))}
+      </div>
+    </BorderCountriesContainer>
+  );
 };
 
 const SingleCountry = ({ country }) => {
@@ -98,7 +109,7 @@ const SingleCountry = ({ country }) => {
   const isLightTheme = useTheme();
 
   return (
-    <Container>
+    <SingleCountryContainer>
       <BackButton id='back-button' onClick={() => history.goBack()}>
         <img
           id='back-arrow'
@@ -129,12 +140,10 @@ const SingleCountry = ({ country }) => {
               languages={languages}
             />
           </div>
-        </div>
-        <div id='border-countries' className='border-countries'>
           <BorderCountries borderCountriesArray={borderCountries} />
         </div>
       </CountryContentContainer>
-    </Container>
+    </SingleCountryContainer>
   );
 };
 

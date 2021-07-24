@@ -5,7 +5,7 @@ import {
   tabletView
 } from '../../constants/stylingVariables';
 
-export const Container = styled.div`
+export const SingleCountryContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin: 60px;
@@ -59,6 +59,8 @@ export const CountryContentContainer = styled.div`
   }
 
   .details {
+    display: flex;
+    flex-direction: column;
     margin: auto 0;
     padding: 0 20px;
     flex: 1;
@@ -122,6 +124,40 @@ export const CountryContentContainer = styled.div`
       .details-field {
         font-size: 14px;
       }
+    }
+  }
+`;
+
+export const BorderCountriesContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  font-size: 16px;
+
+  #border-countries-title {
+    padding-top: 10px;
+    flex-shrink: 0;
+    width: 30%;
+  }
+
+  #countries-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  #country-card {
+    display: block;
+    padding: 5px 15px;
+    margin: 5px;
+    background-color: ${props => props.theme.elementsBG};
+    box-shadow: 0 0px 18px -3px ${props => props.theme.shadow};
+  }
+
+  @media (max-width: ${mobileView}) {
+    flex-direction: column;
+    #border-countries-title {
+      width: 100%;
+      padding: 20px 0;
     }
   }
 `;
