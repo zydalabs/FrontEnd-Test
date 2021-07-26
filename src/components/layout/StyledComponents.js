@@ -4,7 +4,7 @@ import { mobileView, tabletView } from '../../constants/stylingVariables';
 export const MainContainerWrapper = styled.div`
   display: flex;
   justify-content: center;
-  padding: 20px;
+  padding: 80px 20px 20px 20px;
 `;
 
 export const HeaderContainer = styled.div`
@@ -21,6 +21,8 @@ export const HeaderContainer = styled.div`
 `;
 
 export const HeaderWrapper = styled.header`
+  position: fixed;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,12 +31,15 @@ export const HeaderWrapper = styled.header`
   padding: 20px;
   box-shadow: 0 0px 18px -3px ${props => props.theme.shadow};
   background-color: ${props => props.theme.elementsBG};
+  z-index: 1;
 
   @media (max-width: ${tabletView}) {
     font-size: 18px;
+    width: calc(100% - 40px);
   }
 
   @media (max-width: ${mobileView}) {
-    font-size: 16px;
+    font-size: 14px;
+    width: calc(100% - 40px);
   }
 `;

@@ -15,12 +15,12 @@ function App() {
   const [theme, updateTheme] = useState(currentTheme);
   return (
     <ThemeProvider theme={THEMES[theme]}>
-      <GlobalStyles />
       <Layout updateTheme={updateTheme}>
         <Router history={history}>
           <MainContentContainer />
         </Router>
       </Layout>
+      <GlobalStyles />
     </ThemeProvider>
   );
 }

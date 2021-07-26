@@ -50,7 +50,7 @@ export const CountryContentContainer = styled.div`
   flex-direction: row;
   margin-top: 60px;
 
-  .flag {
+  #flag {
     flex: 1;
     img {
       width: 550px;
@@ -58,7 +58,7 @@ export const CountryContentContainer = styled.div`
     }
   }
 
-  .details {
+  #details {
     display: flex;
     flex-direction: column;
     margin: auto 0;
@@ -85,13 +85,13 @@ export const CountryContentContainer = styled.div`
   }
 
   @media (max-width: ${desktopView}) {
-    .flag > img {
+    #flag > img {
       width: 450px;
     }
   }
 
   @media (max-width: ${tabletView}) {
-    .flag > img {
+    #flag > img {
       width: 100%;
     }
 
@@ -113,7 +113,7 @@ export const CountryContentContainer = styled.div`
     margin-top: 40px;
     flex-direction: column;
 
-    .flag {
+    #flag {
       margin-bottom: 30px;
     }
     .details {
@@ -149,6 +149,8 @@ export const BorderCountriesContainer = styled.div`
     display: block;
     padding: 5px 15px;
     margin: 5px;
+    font-size: 14px;
+
     background-color: ${props => props.theme.elementsBG};
     box-shadow: 0 0px 18px -3px ${props => props.theme.shadow};
   }

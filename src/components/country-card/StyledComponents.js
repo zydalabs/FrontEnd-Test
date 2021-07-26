@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { tabletView } from '../../constants/stylingVariables';
 
 export const Card = styled.div`
   max-width: 300px;
@@ -14,6 +15,10 @@ export const Card = styled.div`
   &:hover {
     transform: scale(1.02);
     box-shadow: 0 0 19px -8px ${props => props.theme.shadow};
+  }
+
+  @media (max-width: ${tabletView}) {
+    justify-self: center;
   }
 `;
 
