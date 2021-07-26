@@ -18,6 +18,10 @@ const Container = styled.div`
 
 const HomePage = () => {
   const [countries, setCountries] = React.useState([]);
+  const [filteredCountries, updateFilteredCountries] =
+    React.useState(countries);
+  const [searchInput, updateSearchInput] = React.useState('');
+  const [selectInput, updateSelectInput] = React.useState('');
 
   React.useEffect(() => {
     const fetchCountries = async () => {
@@ -27,10 +31,43 @@ const HomePage = () => {
     fetchCountries();
   }, []);
 
+  React.useEffect(() => {
+    const filterBySearchInput = countries => {
+      const searchKeyword = searchInput.toLowerCase();
+      const regionSelected = selectInput.toLowerCase();
+
+      const filterBySearch = arr => {
+        return arr.filter(
+          item => item.name.toLowerCase().indexOf(searchKeyword) > -1
+        );
+      };
+
+      const filterBySelect = arr => {
+        return arr.filter(item => item.region.toLowerCase() === regionSelected);
+      };
+
+      if (!!searchKeyword && !!regionSelected) {
+        updateFilteredCountries(filterBySearch(filterBySelect(countries)));
+      } else if (!!searchKeyword && !!!regionSelected) {
+        updateFilteredCountries(filterBySearch(countries));
+      } else if (!!!searchKeyword && !!regionSelected) {
+        updateFilteredCountries(filterBySelect(countries));
+      } else {
+        updateFilteredCountries(countries);
+      }
+    };
+
+    filterBySearchInput(countries);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchInput, selectInput]);
+
   return (
     <Container id='homepage-container'>
-      <SearchAndFilter />
-      <AllCountries countries={countries} />
+      <SearchAndFilter
+        updateSearchInput={updateSearchInput}
+        updateSelectInput={updateSelectInput}
+      />
+      <AllCountries countries={filteredCountries} />
     </Container>
   );
 };

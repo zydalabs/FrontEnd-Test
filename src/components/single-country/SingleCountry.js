@@ -21,7 +21,7 @@ const LeftColumn = ({ nativeName, population, region, subregion, capital }) => {
       </p>
       <p id='population' className='details-field'>
         <span className='title'>Population: </span>
-        {population}
+        {population?.toLocaleString()}
       </p>
       <p id='region' className='details-field'>
         <span className='title'>Region: </span>
@@ -66,7 +66,9 @@ const BorderCountries = ({ borderCountriesArray }) => {
       </span>
       <div id='countries-cards'>
         {borderCountriesArray.map(countryName => (
-          <div id='country-card'>{countryName}</div>
+          <div id='country-card' key={countryName}>
+            {countryName}
+          </div>
         ))}
       </div>
     </BorderCountriesContainer>
@@ -119,10 +121,10 @@ const SingleCountry = ({ country }) => {
         Back
       </BackButton>
       <CountryContentContainer id='country-content-container'>
-        <div id='flag' className='flag'>
+        <div id='flag'>
           <img id='flag-img' src={flag} alt='country-flag' />
         </div>
-        <div id='details' className='details'>
+        <div id='details'>
           <h1 id='name'>{name}</h1>
 
           <div id='columns-container'>

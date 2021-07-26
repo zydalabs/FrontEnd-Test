@@ -16,7 +16,7 @@ const CountryCard = ({ country }) => {
 
         <p className='population'>
           <span className='title'>Population: </span>
-          {country?.population}
+          {country?.population?.toLocaleString()}
         </p>
 
         <p className='region'>

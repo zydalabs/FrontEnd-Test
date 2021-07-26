@@ -3,7 +3,10 @@ import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
 import { DropDownContainer } from './StyledComponents';
 
-const FilterDropDownMenu = () => {
+//normally this should be dynamic however in this case as they are predetermined it would be an overkill
+const REGION_OPTIONS = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
+
+const FilterDropDownMenu = ({ updateSelectInput }) => {
   return (
     <DropDownContainer>
       <Dropdown
@@ -11,14 +14,12 @@ const FilterDropDownMenu = () => {
         placeholderClassName='ddm-placeholder'
         menuClassName='ddm-menu'
         arrowClassName='ddm-arrow'
-        options={options}
-        onChange={e => console.log(e)}
+        options={REGION_OPTIONS}
+        onChange={e => updateSelectInput(e.value)}
         placeholder='Filter by Region'
       />
     </DropDownContainer>
   );
 };
-
-const options = ['one', 'two', 'three'];
 
 export default FilterDropDownMenu;

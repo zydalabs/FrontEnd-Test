@@ -14,8 +14,8 @@ const darkTheme = {
   name: 'dark',
   bodyBackground: '#202c37',
   elementsBG: '#2b3945',
-  input: '##fafafa',
-  fontColor: '#ffffff',
+  input: '#fafafa',
+  fontColor: '#fff',
   shadow: '#171918'
 };
 
