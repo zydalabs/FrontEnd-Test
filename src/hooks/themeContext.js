@@ -4,7 +4,7 @@ import { useContext } from 'react';
 const useTheme = () => {
   const theme = useContext(ThemeContext);
   const isLightTheme = theme.name === 'light';
-  return isLightTheme;
+  return { isLightTheme };
 };
 
 export default useTheme;

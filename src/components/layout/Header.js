@@ -7,7 +7,7 @@ const Header = ({ updateTheme }) => {
     <HeaderWrapper id='header'>
       <HeaderContainer id='header-content-container'>
         Where in the World?
-        <ThemeToggleButton updateTheme={updateTheme} />
+        <ThemeToggleButton id='theme-toggle-button' updateTheme={updateTheme} />
       </HeaderContainer>
     </HeaderWrapper>
   );

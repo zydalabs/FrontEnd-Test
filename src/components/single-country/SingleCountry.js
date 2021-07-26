@@ -108,10 +108,10 @@ const SingleCountry = ({ country }) => {
   }, [borders]);
 
   const history = useHistory();
-  const isLightTheme = useTheme();
+  const { isLightTheme } = useTheme();
 
   return (
-    <SingleCountryContainer>
+    <SingleCountryContainer id='single-country-container'>
       <BackButton id='back-button' onClick={() => history.goBack()}>
         <img
           id='back-arrow'
@@ -129,6 +129,7 @@ const SingleCountry = ({ country }) => {
 
           <div id='columns-container'>
             <LeftColumn
+              id='left-column'
               nativeName={nativeName}
               population={population}
               region={region}
@@ -137,6 +138,7 @@ const SingleCountry = ({ country }) => {
             />
 
             <RightColumn
+              id='right-column'
               topLevelDomain={topLevelDomain}
               currencies={currencies}
               languages={languages}

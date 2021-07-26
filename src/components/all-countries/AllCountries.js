@@ -4,9 +4,13 @@ import { MainContainer } from './StyledComponents';
 
 const AllCountries = ({ countries }) => {
   return (
-    <MainContainer id='mcc'>
+    <MainContainer id='main-container'>
       {countries?.map(country => (
-        <CountryCard key={country?.numericCode} country={country} />
+        <CountryCard
+          id={`country-card-${country.alpha3Code}`}
+          key={country?.alpha3Code}
+          country={country}
+        />
       ))}
     </MainContainer>
   );

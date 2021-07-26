@@ -1,5 +1,8 @@
+import { ALL_COUNTRIES } from './endPoints';
+
 export const getAllCountries = async () => {
-  const response = await fetch('https://restcountries.eu/rest/v2/all');
+  const endPoint = ALL_COUNTRIES();
+  const response = await fetch(endPoint);
   const data = await response.json();
   return data;
 };

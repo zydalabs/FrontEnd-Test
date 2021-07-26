@@ -4,7 +4,7 @@ import { SearchAndFilterContainer } from './StyledComponents';
 
 const SearchAndFilter = ({ updateSearchInput, updateSelectInput }) => {
   return (
-    <SearchAndFilterContainer>
+    <SearchAndFilterContainer id='search-and-filter-container'>
       <SearchInput updateSearchInput={updateSearchInput} />
       <FilterDropDownMenu updateSelectInput={updateSelectInput} />
     </SearchAndFilterContainer>

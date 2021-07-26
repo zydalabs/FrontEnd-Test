@@ -5,7 +5,7 @@ import { sun, moon } from '../../svgs';
 import { Button } from './StyledComponents';
 
 const ThemeToggleButton = ({ updateTheme }) => {
-  const isLightTheme = useTheme();
+  const { isLightTheme } = useTheme();
 
   const themeToggle = () => {
     if (isLightTheme) {
@@ -25,10 +25,10 @@ const ThemeToggleButton = ({ updateTheme }) => {
     />
   );
 
-  const themeName = isLightTheme ? 'Dark Mode' : 'Light Mode';
+  const themeName = `${isLightTheme ? 'Dark' : 'Light'} Mode`;
 
   return (
-    <Button className='element' onClick={themeToggle} id='theme-toggle-button'>
+    <Button className='element' onClick={themeToggle}>
       {themeIcon}
       {themeName}
     </Button>

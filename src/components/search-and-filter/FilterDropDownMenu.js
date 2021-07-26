@@ -8,8 +8,9 @@ const REGION_OPTIONS = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
 
 const FilterDropDownMenu = ({ updateSelectInput }) => {
   return (
-    <DropDownContainer>
+    <DropDownContainer id='drop-down-container'>
       <Dropdown
+        id='drop-down-menu'
         controlClassName='ddm-control'
         placeholderClassName='ddm-placeholder'
         menuClassName='ddm-menu'

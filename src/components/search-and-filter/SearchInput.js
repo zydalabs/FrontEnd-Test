@@ -4,9 +4,9 @@ import { darkThemeSearch, lightThemeSearch } from '../../svgs';
 import { SearchInputContainer, StyledInput } from './StyledComponents';
 
 const SearchInput = ({ updateSearchInput }) => {
-  const isLightTheme = useTheme();
+  const { isLightTheme } = useTheme();
   return (
-    <SearchInputContainer>
+    <SearchInputContainer id='search-input-container'>
       <img
         alt='search'
         id='search-icon'

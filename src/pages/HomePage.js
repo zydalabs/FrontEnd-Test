@@ -58,8 +58,7 @@ const HomePage = () => {
     };
 
     filterBySearchInput(countries);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [searchInput, selectInput]);
+  }, [countries, searchInput, selectInput]);
 
   return (
     <Container id='homepage-container'>
@@ -72,4 +71,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default React.memo(HomePage);
