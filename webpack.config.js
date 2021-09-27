@@ -1,12 +1,13 @@
-const path= require("path")
-
+const path = require("path")
+const HtmlWebpackPlugin = require("html-webpack-plugin")
 module.exports = {
     entry: "./src/index.js",
     mode: "development", // default is production
     output: {
-        filename: "main.js",
+        filename: "main.[contenthash].js", // contentHash for cash busting
         path: path.resolve(__dirname, "dist")
     },
+    plugins: [new HtmlWebpackPlugin()],
     module: {
         rules: [
             {
