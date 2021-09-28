@@ -48,6 +48,7 @@
     "webpack-cli": "^4.8.0"
   },
   "dependencies": {
+    "axios": "^0.21.4",
     "mini-css-extract-plugin": "^2.3.0",
     "postcss-cli": "^9.0.0",
     "postcss-loader": "^6.1.1",
