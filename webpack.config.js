@@ -1,7 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin'); // for stand alone generated css files
-
+const { EnvironmentPlugin } = require('webpack')
 
 module.exports = {
     entry: "./src/index.js",
@@ -16,7 +16,11 @@ module.exports = {
             template: path.resolve(__dirname, "public/index.html"),
             inject: true
         }),
-        new MiniCssExtractPlugin()],
+        new MiniCssExtractPlugin(),
+        new EnvironmentPlugin({
+            REACT_APP_COUNTRY_LAYER_API_KEY: "api.countrylayer.com/v2/"
+        })
+    ],
     module: {
         rules: [
             {

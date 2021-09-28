@@ -2,3 +2,4 @@
 /.idea
 /dist
 /src/styles/tailwind.generated.css
+/.env

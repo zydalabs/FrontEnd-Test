@@ -72,7 +72,9 @@ Once you've added your information to the template, delete this file and rename 
 - creating webpack.config.js and needed loaders and plugins 
 - use eslint to fix styling and indentation 
 - add tailwind css without using CRACO as we cant use so many configurations with it
-  in order to do so We will use the pre npm script prefix as well as PostCSS to compile the css before running react scripts. 
+  in order to do so We will use the pre npm script_prefix as well as PostCSS to compile the css before running react scripts. 
+- use EnvironmentPlugin for env file api keys   
+  
 
 
 
