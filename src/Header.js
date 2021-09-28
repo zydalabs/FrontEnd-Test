@@ -3,7 +3,7 @@ import {BsMoon} from "react-icons/bs"
 
 
 export const Header = () => {
-    return <nav className="flex px-5 py-4 bg-gray-100 justify-between shadow-md">
+    return <nav className="flex px-5 py-4 bg-white justify-between shadow">
 
 
         <div className="flex items-center space-x-3 font-nunito font-semibold">

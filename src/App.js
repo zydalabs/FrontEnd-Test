@@ -2,7 +2,7 @@ import React from "react";
 import "./styles.css"
 
 export const App = ()=>{
-    return <div>
-
+    return <div className="h-screen">
+   
     </div>
 }

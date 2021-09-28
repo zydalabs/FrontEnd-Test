@@ -16,6 +16,6 @@
  */
 @tailwind utilities;
 
-/*body {*/
-/*  !*background-color: pink;*!*/
-/*}*/
+body {
+  background-color: #fcfcfc;
+}
