@@ -35,7 +35,7 @@ export const useCountriesApi = (apiObject) => {
 
 
     useEffect(() => {
-        apiObject ? searchByCriteria() :  allCountries()   ;
+        apiObject && apiObject.key.length ? searchByCriteria() :  allCountries()   ;
     }, [apiObject])
 
     return {result}

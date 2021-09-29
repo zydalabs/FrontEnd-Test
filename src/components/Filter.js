@@ -6,16 +6,14 @@ export const Filter = ({setFilter}) => {
 
     const regions = ['Africa', 'America', 'Asia', 'Europe', 'Oceania'];
     const [selection, setSelection] = useState(null);
-    const [dropDownVisible, setDropDownVisisble ] = useState(false)
+    const [dropDownVisible, setDropDownVisible ] = useState(false)
 
-    return <div className="p-10 bg-gray-50">
-        <div className="max-w-md mx-auto">
-            <div className="relative">
+    return <div className="right-0 absolute">
                 <div className="h-10 bg-white flex border border-gray-200 rounded items-center">
                     <input value={selection ? selection : ''} name="select" id="select"
                            onChange={(e) => {
                                setSelection(e.target.value);
-                               setDropDownVisisble(true);
+                               setDropDownVisible(true);
                            }}
                            className="px-4 appearance-none outline-none text-gray-800 w-full" checked/>
 
@@ -34,7 +32,7 @@ export const Filter = ({setFilter}) => {
                                     className="block p-2 border-transparent border-l-4 hover:border-blue-600 hover:bg-gray-100"
                                     onClick={() => {
                                         setSelection(r);
-                                        setDropDownVisisble(false)
+                                        setDropDownVisible(false)
                                         setFilter({ type:'region', key:r });
                                     }}
                                 > {r}
@@ -44,7 +42,5 @@ export const Filter = ({setFilter}) => {
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
 }
 
