@@ -2,10 +2,11 @@ import React from "react";
 import {useState} from "react";
 import clearIcon from "../../svg/delete.svg";
 
-export const Filter = () => {
+export const Filter = ({setFilter}) => {
 
     const regions = ['Africa', 'America', 'Asia', 'Europe', 'Oceania'];
     const [selection, setSelection] = useState(null);
+    const [dropDownVisible, setDropDownVisisble ] = useState(false)
 
     return <div className="p-10 bg-gray-50">
         <div className="max-w-md mx-auto">
@@ -14,6 +15,7 @@ export const Filter = () => {
                     <input value={selection ? selection : ''} name="select" id="select"
                            onChange={(e) => {
                                setSelection(e.target.value);
+                               setDropDownVisisble(true);
                            }}
                            className="px-4 appearance-none outline-none text-gray-800 w-full" checked/>
 
@@ -24,14 +26,16 @@ export const Filter = () => {
                     </button>
                 </div>
                 <div
-                    className={`absolute rounded shadow bg-white overflow-hidden ${selection ? '' : 'hidden'} peer-checked:flex flex-col w-full mt-1 border border-gray-200`}>
+                    className={`absolute rounded shadow bg-white overflow-hidden ${dropDownVisible ? '' : 'hidden'} peer-checked:flex flex-col w-full mt-1 border border-gray-200`}>
                     <div className="cursor-pointer group">
                         {
                             selection && regions.filter((r) => r.toLowerCase().includes(selection.toLowerCase())).map((r) => {
                                 return <a
                                     className="block p-2 border-transparent border-l-4 hover:border-blue-600 hover:bg-gray-100"
                                     onClick={() => {
-                                        setSelection(r)
+                                        setSelection(r);
+                                        setDropDownVisisble(false)
+                                        setFilter({ type:'region', key:r });
                                     }}
                                 > {r}
                                 </a>

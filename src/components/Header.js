@@ -1,5 +1,5 @@
 import React from "react";
-import {BsMoon} from "react-icons/bs"
+import {BsMoon} from "react-icons/bs";
 
 
 export const Header = () => {

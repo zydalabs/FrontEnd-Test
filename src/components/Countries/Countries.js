@@ -1,13 +1,18 @@
-import React from "react";
-import "./countries.styles.scss"
+import React, {useEffect, useState} from "react";
+import "./countries.styles.scss";
 import {useCountriesApi} from "../../hooks/useCountriesApis";
 
 
-export const Countries = () => {
+export const Countries = ({ api }) => {
 
-    // console.log(useCountriesApi('all').result[0])
+    const [ apiObject, setApiObject ] = useState();
+
+    useEffect(() => {
+        setApiObject(api);
+    }, [api])
+
     return <div className={"py-16 px-16 grid grid-flow-row grid-cols-4 gap-x-24 gap-y-12 bg-gray-50"}>
-        {useCountriesApi('all').result.map((country) => {
+        {useCountriesApi(apiObject).result.map((country) => {
             return <div key={country.cca2}
                         className="content-div  w-full rounded shadow-md max-w-sm">
                 <div className="bg-white h-24">
