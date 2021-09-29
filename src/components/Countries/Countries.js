@@ -1,12 +1,12 @@
 import React from "react";
 import "./countries.styles.scss"
-import {useCountriesApi} from "../hooks/useCountriesApis";
+import {useCountriesApi} from "../../hooks/useCountriesApis";
 
 
 export const Countries = () => {
 
     // console.log(useCountriesApi('all').result[0])
-    return <div className={"py-16 px-16 grid grid-flow-row grid-cols-4 gap-x-24 gap-y-12"}>
+    return <div className={"py-16 px-16 grid grid-flow-row grid-cols-4 gap-x-24 gap-y-12 bg-gray-50"}>
         {useCountriesApi('all').result.map((country) => {
             return <div key={country.cca2}
                         className="content-div  w-full rounded shadow-md max-w-sm">
@@ -38,7 +38,6 @@ export const Countries = () => {
                 {/*        </button>*/}
                 {/*    </div>*/}
                 {/*</div>*/}
-
             </div>
         })}
     </div>

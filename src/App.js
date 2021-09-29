@@ -1,13 +1,14 @@
 import React from "react";
 import "./styles.css"
-import {useCountriesApi} from "./hooks/useCountriesApis";
-import {Countries} from "./Countries/Countries";
+import {Countries} from "./components/Countries/Countries";
+import {Filter} from "./components/Filter"
+
 
 
 export const App = () => {
 
     return <div className="h-screen">
-        {/*{console.log(useCountriesApi('all'))}*/}
+        <Filter/>
         <Countries/>
     </div>
 }
