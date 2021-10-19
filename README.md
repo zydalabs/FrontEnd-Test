@@ -10,7 +10,7 @@ Thanks for checking out this front-end coding task.
 
 ## The challenge
 
-Your challenge is to integrate with the [REST Countries API](https://restcountries.eu) to pull country data and display it like in the designs.
+Your challenge is to integrate with the [REST Countries API](https://restcountries.com) to pull country data and display it like in the designs.
 
 Please use [React](https://reactjs.org) JavaScript framework/library or [Next.js](https://nextjs.org/) React framework. You also have complete control over which packages you use to do things like make HTTP requests or style your project.
 
