@@ -65,3 +65,17 @@ The template provides a guide for what to add. A custom `README` will help you e
 Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
 
 **Have fun building!** 🚀
+
+
+-- configurations
+ 
+- creating webpack.config.js and needed loaders and plugins 
+- use eslint to fix styling and indentation 
+- add tailwind css without using CRACO as we cant use so many configurations with it
+  in order to do so We will use the pre npm script_prefix as well as PostCSS to compile the css before running react scripts. 
+- use EnvironmentPlugin for env file api keys   
+  
+
+
+
+
